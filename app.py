@@ -67,6 +67,7 @@ booked_by_day = filtered_df.groupby("date")["booked_rooms"].sum()
 avail_by_day = filtered_df.groupby("date")["available_rooms"].sum()
 
 occupancy_trend = (booked_by_day / avail_by_day).reset_index(name="occupancy_rate")
+filtered_df["occupancy_rate"] = filtered_df["booked_rooms"] / filtered_df["available_rooms"]
 best_occ = occupancy_trend["occupancy_rate"].max()
 worst_occ = occupancy_trend["occupancy_rate"].min()
 
@@ -126,7 +127,7 @@ fig1 = px.line(
     title="Daily Occupancy Rate"
 )
 
-st.plotly_chart(fig1, width=True)
+st.plotly_chart(fig1, use_container_width=True)
 
 #st.write(fig1)
 
@@ -144,7 +145,7 @@ fig2 = px.scatter(
     title="Occupancy vs ADR"
 )
 
-st.plotly_chart(fig2, width=True)
+st.plotly_chart(fig2, use_container_width=True)
 #st.write(fig2)
 # -----------------------------
 # 7. Room type performance
@@ -159,7 +160,7 @@ fig3 = px.bar(
     title="Revenue by Room Type"
 )
 
-st.plotly_chart(fig3, width=True)
+st.plotly_chart(fig3, use_container_width=True)
 #st.write(fig3)
 
 # -----------------------------
