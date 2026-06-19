@@ -136,12 +136,7 @@ st.plotly_chart(fig1, width=True)
 # -----------------------------
 st.subheader("💰 Revenue Over Time")
 
-"""fig2 = px.line(
-    revenue_trend,
-    x="date",
-    y="revenue",
-    title="Daily Revenue"
-)"""
+
 fig2 = px.scatter(
     filtered_df,
     x="occupancy_rate",
