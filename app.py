@@ -2,8 +2,7 @@
 import pandas as pd
 import plotly.express as px
 import streamlit as st
-import plotly.io as pio
-pio.renderers.default = "notebook_connected"
+
 # -----------------------------
 # 1. Load data
 # -----------------------------
